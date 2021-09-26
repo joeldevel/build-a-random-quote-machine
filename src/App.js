@@ -8,8 +8,6 @@ function App() {
     <div>
       <h1>It works</h1>
       <QuoteBox/>
-      <QuoteBox/>
-      <QuoteBox/>
     </div>
   );
 }

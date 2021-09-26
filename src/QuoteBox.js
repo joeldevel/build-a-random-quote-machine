@@ -6,15 +6,23 @@ import TwitterLink from './TwitterLink';
 const QouteBox = () => {
 	const [quotes, setQuotes] = useState(null);
 	const [currentQuote, setCurrentQuote] = useState(null);
+	const [dataIsReady, setDataIsReady] = useState(false);
 
 	useEffect(()=> {
 		fetch("https://type.fit/api/quotes")
 		.then(response=>response.json())
 		.then(data=>{
 			setQuotes(data);
+			return data;
 		})
-		.then(()=>{
-			getRandomQuote();
+		.then((data)=>{
+			const randomQuote = data[Math.floor(Math.random()*data.length)];
+			setCurrentQuote(randomQuote);
+			// getRandomQuote();
+		})
+		.then(()=> {
+			setDataIsReady(true);
+			console.log("data is ready ? ", dataIsReady);
 		})
 		.catch(e=>console.log(e));
 
@@ -29,10 +37,10 @@ const QouteBox = () => {
 		 
 		<div className="quote-box" id="quote-box">
 			<h1></h1>
-			{currentQuote? <p id="text">{currentQuote.text}</p>: "loading"}
-			{currentQuote? <p id="author">{currentQuote.author}</p>: "loading"}
+			{dataIsReady? <p id="text">{currentQuote.text}</p>: "loading"}
+			{dataIsReady? <p id="author">{currentQuote.author}</p>: "loading"}
 			<ActionButton btnText="new quote" id="new-quote" btnType="button" handleClick={getRandomQuote}/>
-			{currentQuote ? <TwitterLink tweet={currentQuote}/>: "loading"}
+			{dataIsReady ? <TwitterLink tweet={currentQuote}/>: "loading"}
 		</div> 
 		);
 }

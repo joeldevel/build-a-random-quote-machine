@@ -29,9 +29,9 @@ const QouteBox = () => {
 		 
 		<div className="quote-box" id="quote-box">
 			<h1></h1>
-			<p id="text">{currentQuote? currentQuote.text : "loading"}</p>
-			<p id="author">{currentQuote? currentQuote.author : "loading"}</p>
-			<ActionButton btnText="new qoute" id="new-quote" btnType="button" handleClick={getRandomQuote}/>
+			{currentQuote? <p id="text">{currentQuote.text}</p>: "loading"}
+			{currentQuote? <p id="author">{currentQuote.author}</p>: "loading"}
+			<ActionButton btnText="new quote" id="new-quote" btnType="button" handleClick={getRandomQuote}/>
 			{currentQuote ? <TwitterLink tweet={currentQuote}/>: "loading"}
 		</div> 
 		);

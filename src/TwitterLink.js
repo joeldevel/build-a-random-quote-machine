@@ -8,6 +8,7 @@ const TwitterLink = (props) => {
 		<a href={`https://twitter.com/intent/tweet?text=${formatedQuote}`}
 			id="tweet-quote"
 			target="_blank"
+			rel="noreferrer"
 		>
 			Tweet quote
 		</a>

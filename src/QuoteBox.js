@@ -1,5 +1,8 @@
 import React from 'react';
 
+import ActionButton from './ActionButton';
+
+
 const QouteBox = () => {
 
 	return (
@@ -9,6 +12,8 @@ const QouteBox = () => {
 			<h1>qoutes here</h1>
 			<p id="text">text here</p>
 			<p id="author">author here</p>
+			<ActionButton btnText="new qoute" id="new-quote" btnType="button"/>
+			<ActionButton btnText="tweet qoute" id="tweet-quote" btnType="button"/>
 		</div>
 		);
 }

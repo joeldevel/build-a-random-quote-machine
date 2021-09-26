@@ -27,7 +27,7 @@ const QouteBox = () => {
 	}, []);
 
 	const getRandomQuote = () => {
-		const randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+		const randomQuote = quotes ? quotes[Math.floor(Math.random()*quotes.length)]: {text: "loading quote"};
 		setCurrentQuote(randomQuote);
 	}
 
@@ -36,7 +36,7 @@ const QouteBox = () => {
 		<div className="quote-box" id="quote-box">
 			<h1></h1>
 			{dataIsReady? <p id="text">{currentQuote.text}</p>: "loading"}
-			{dataIsReady? <p id="author">{currentQuote.author}</p>: "loading"}
+			{dataIsReady? <p id="author">{currentQuote.author? currentQuote.author: "Anonimous"}</p>: "loading"}
 			<ActionButton btnText="new quote" id="new-quote" btnType="button" handleClick={getRandomQuote}/>
 			{dataIsReady ? <TwitterLink tweet={currentQuote}/>: "loading"}
 		</div> 

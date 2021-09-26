@@ -17,13 +17,13 @@ const QouteBox = () => {
 
 	}, []);
 
-	// useEffect(()=>{
-	// 	getRandomQuote()
-	// },[quotes])
-
 	const getRandomQuote = () => {
 		const q = quotes[Math.floor(Math.random()*quotes.length)];
 		setCurrentQuote(q);
+	}
+
+	const tweetQuote = () => {
+		console.log("tweetig quote: ", currentQuote);
 	}
 	return (
 
@@ -31,11 +31,11 @@ const QouteBox = () => {
 			style={{border: "1px dotted purple",margin: 10 }}>
 			<h1>qoutes here</h1>
 			<p id="text">{currentQuote? currentQuote.text:
-				quotes? quotes[0].text: 
+				quotes? setCurrentQuote(quotes[0]): 
 				"loading"}</p>
 			<p id="author">author here</p>
 			<ActionButton btnText="new qoute" id="new-quote" btnType="button" handleClick={getRandomQuote}/>
-			<ActionButton btnText="tweet qoute" id="tweet-quote" btnType="button"/>
+			<ActionButton btnText="tweet qoute" id="tweet-quote" btnType="button" handleClick={tweetQuote}/>
 		</div>
 		);
 }

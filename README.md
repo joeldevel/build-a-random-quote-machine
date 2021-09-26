@@ -1,6 +1,9 @@
 # build-a-random-quote-machine
 free code camp - frontend development libraries project
 
+## Watch it live <a href="https://codepen.io/joeldevel/pen/powQwWK" target="_blank">here in codepen!</a>
+Note: all components were put together in one sigle file to work in codepen.
+
 
 
 Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/qRZeGZ.

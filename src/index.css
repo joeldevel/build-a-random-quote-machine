@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+	background: plum;
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	justify-content: center;
+	align-content: center;
+}
+
+.quote-box {
+	border: none;
+	border-radius: 4px;
+	padding: 20px 20px 30px;
+	background: whitesmoke;
+	transform: translateY(-10vh);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+	width: 300px;
+}
+
+button,
+a {
+	padding: 10px;
+	text-transform: uppercase;
+	border: 1px solid black;
+	width: 120px;
+	font-size: 16px;
+	text-decoration: none;
+	height: 40px;
+	display: inline-block;
+}
+
+a {
+	float: right;
+}
+
+@media (min-width: 600px) {
+	.quote-box {
+		width:400px;
+	}
+}

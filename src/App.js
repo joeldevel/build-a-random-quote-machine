@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 // components
 import QuoteBox from './QuoteBox';

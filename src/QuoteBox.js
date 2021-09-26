@@ -18,11 +18,9 @@ const QouteBox = () => {
 		.then((data)=>{
 			const randomQuote = data[Math.floor(Math.random()*data.length)];
 			setCurrentQuote(randomQuote);
-			// getRandomQuote();
 		})
 		.then(()=> {
 			setDataIsReady(true);
-			console.log("data is ready ? ", dataIsReady);
 		})
 		.catch(e=>console.log(e));
 

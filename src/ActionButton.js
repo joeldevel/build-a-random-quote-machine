@@ -2,7 +2,12 @@ import React from 'react';
 
 const ActionButton = (props) => {
 	return (
-		<button type={props.btnType} id={props.id}>{props.btnText}</button>
+		<button type={props.btnType} 
+				id={props.id}
+				onClick={props.handleClick}
+		>
+				{props.btnText}
+		</button>
 		);
 }
 

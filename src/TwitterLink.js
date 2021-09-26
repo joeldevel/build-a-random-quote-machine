@@ -1,9 +1,13 @@
 import React from 'react';
 
 const TwitterLink = (props) => {
+	const formatedQuote = props.tweet.text;
+	formatedQuote.replaceAll(" ", "%20");
+
 	return (
-		<a href={`https://twitter.com/intent/tweet/${props.tweet.text}`}
+		<a href={`https://twitter.com/intent/tweet?text=${formatedQuote}`}
 			id="tweet-quote"
+			target="_blank"
 		>
 			Tweet quote
 		</a>

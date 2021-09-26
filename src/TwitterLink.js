@@ -2,7 +2,7 @@ import React from 'react';
 
 const TwitterLink = (props) => {
 	return (
-		<a href={`https://twitter.com/intend/tweet/${props.tweet.text}`}
+		<a href={`https://twitter.com/intent/tweet/${props.tweet.text}`}
 			id="tweet-quote"
 		>
 			Tweet quote
